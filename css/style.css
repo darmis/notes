@@ -1,0 +1,72 @@
+html { 
+  font-family: 'Palanquin', sans-serif;
+  font-size: 1rem;
+  background-image: url(./../img/bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+body {
+  background: none;
+  color: #fff;
+}
+
+.container {
+  text-align: center;
+  width: 60%;
+}
+
+#homePageContainer {
+  margin-top: 150px;
+}
+
+.row {
+  margin: 0;
+}
+
+.row h1 {
+  font-family: 'Merienda', cursive;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+hr {
+  width: 75%;
+  height: 5px;
+  border: 0;
+  box-shadow: 0 10px 10px -10px #fff inset;
+}
+
+.checkbox {
+  font-size: 0.85rem;
+}
+
+#signUpForm {
+  display:none;
+}
+
+.toggleForms {
+  font-weight: bold;
+}
+
+/*#note {
+  width: 100%;
+  height: 100%;
+}*/ 
+
+a {
+  color: white;
+}
+
+a:hover {
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+}
+
+.navbar {
+  font-family: 'Merienda', cursive;
+  font-weight: 700;
+}
+
+  
