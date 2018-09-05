@@ -6,11 +6,9 @@
 
   if (array_key_exists("id", $_SESSION)) {
     include("./script/connection.php");
-    $query = "SELECT * FROM `notes` WHERE user_id = ".mysqli_real_escape_string($link, $_SESSION['id'])." LIMIT 1";
+    $query = "SELECT note FROM `users` WHERE id = ".mysqli_real_escape_string($link, $_SESSION['id'])." LIMIT 1";
     $row = mysqli_fetch_array(mysqli_query($link, $query));
     $noteContent = $row['note'];
-    $cx = $row['x'];
-    $cy = $row['y'];
   } else {
     header("Location: index.php");
   }
@@ -26,11 +24,11 @@
     </div>
   </nav>
   <div class="container-fluid" id="notesArea">
-    <div class="note hidden">
+    <div class="note">
       <textarea id="note" class="form-control"><?php echo $noteContent; ?></textarea>
     </div>
   </div>
 
 <?php
-  include("./script/loggedfooter.php");
+  include("./script/footer.php");
 ?>
