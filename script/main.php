@@ -34,9 +34,11 @@
             if (!mysqli_query($link, $query)) {
               $error = "<p>Could not sign you up - please try again later.</p>";
             } else {
-              $query = "UPDATE `users` SET password = '".md5(md5(mysqli_insert_id($link)).$_POST['password'])."' WHERE id = ".mysqli_insert_id($link)." LIMIT 1";
+              $queryOne = "UPDATE `users` SET password = '".md5(md5(mysqli_insert_id($link)).$_POST['password'])."' WHERE id = ".mysqli_insert_id($link)." LIMIT 1";
               $id = mysqli_insert_id($link);
-              mysqli_query($link, $query);
+              $queryTwo = "INSERT INTO `notes` (`user_id`) VALUES ('".mysqli_real_escape_string($link, $id)."')";
+              mysqli_query($link, $queryOne);
+              mysqli_query($link, $queryTwo);
               $_SESSION['id'] = $id;
               if ($_POST['stayLoggedIn'] == '1') {
                 setcookie("id", $id, time() + 60*60*24*365);

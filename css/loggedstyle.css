@@ -48,11 +48,12 @@ body {
   box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.3);
   -webkit-transform: scale(1.125) !important;
           transform: scale(1.125) !important;
-  z-index: 100;
-  cursor: move;
+  
   transition: -webkit-transform .150s;
   transition: transform .150s;
   transition: transform .150s, -webkit-transform .150s;
+  z-index: 999;
+  cursor: move;
 }
 
 .note textarea {
@@ -88,4 +89,8 @@ body {
 
 .note:nth-child(3n) {
   background: #69F098;
+}
+
+.hidden {
+  display: none;
 }
