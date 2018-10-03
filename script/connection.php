@@ -1,5 +1,5 @@
 <?php
-	$link = mysqli_connect("localhost", "darmis_login", "Login123", "darmis_login");
+	$link = mysqli_connect("localhost", "myeseu_admin", "AntroksMugutiaiMugutiai", "myeseu_notes");
 	if (mysqli_connect_error()) {
 		die ("Database Connection Error");
 	}

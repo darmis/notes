@@ -1,11 +1,6 @@
 html { 
   font-family: 'Palanquin', sans-serif;
   font-size: 1rem;
-  background: url(./../img/loggedbg.jpg); 
-}
-
-body {
-  color: #fff;
 }
 
 .navbar {
@@ -13,31 +8,54 @@ body {
   font-weight: 700;
 }
 
+#logo {
+  margin-top: 5px;
+  font-size: 30px;
+}
+
+#logo img {
+  width: 32px;
+}
+
+.btn {
+  margin-top: 7px;
+}
+
+.btn-warning {
+  color: #ffffff !important;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar a:hover {
+  text-decoration: none;
+}
+
 #notesArea {
-  margin-top: 60px;
+  margin-top: 54px;
   background: url(./../img/loggedbg.jpg); 
+  opacity: 0.9;
+  height: 100%;
+  padding: 0;
 }
 
 
 .note {
   float: left;
   display: block;
-  position: relative;
-  padding: 1em;
-  width: 200px;
-  min-height: 200px;
-  margin: 0 30px 30px 0;
- /* background: linear-gradient(top, rgba(0, 0, 0, 0.05), rgba(0, 0, 0, 0.25));*/
+  position: absolute;
   background-color: #FFFD75;
-  box-shadow: 5px 5px 10px -2px rgba(33, 33, 33, 0.3);
-  -webkit-transform: rotate(2deg);
-          transform: rotate(2deg);
-  -webkit-transform: skew(-1deg, 1deg);
-          transform: skew(-1deg, 1deg);
-  transition: -webkit-transform .15s;
-  transition: transform .15s;
-  transition: transform .15s, -webkit-transform .15s;
   z-index: 1;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  transition: box-shadow 200ms;
+}
+
+.note:hover {
+  box-shadow: 2px 1px 6px 4px grey;
 }
 
 .note:hover {
@@ -45,23 +63,37 @@ body {
 }
 
 .note.ui-draggable-dragging:nth-child(n) {
-  box-shadow: 5px 5px 15px 0 rgba(0, 0, 0, 0.3);
-  -webkit-transform: scale(1.125) !important;
-          transform: scale(1.125) !important;
-  
-  transition: -webkit-transform .150s;
-  transition: transform .150s;
-  transition: transform .150s, -webkit-transform .150s;
   z-index: 999;
   cursor: move;
+}
+
+.heading {
+  color: #333;
+  background-color: #f2f098;
+  border-color: #ddd;
+  padding: 0 5px;
+  margin: 0;
+  border-bottom: 1px solid transparent;
+  border-top-left-radius: 3px;
+  border-top-right-radius: 3px;
+  text-align: right;
+}
+
+.heading a {
+  color: #000;
+}
+
+.heading img {
+  width: 12px;
+  height: 12px;
 }
 
 .note textarea {
   background-color: transparent;
   border: none;
-  resize: vertical;
+  resize: both;
   font-family: "Gloria Hallelujah", cursive;
-  width: 100%;
+  /*width: 100%;*/
   padding: 5px;
 }
 
@@ -71,73 +103,6 @@ body {
   box-shadow: 0 0 5px 1px rgba(0, 0, 0, 0.2) inset;
 }
 
-.note textarea.title {
-  font-size: 24px;
-  line-height: 1.2;
-  color: #000000;
-  height: 64px;
-  margin-top: 20px;
-}
-
-.note textarea.cnt {
-  min-height: 200px;
-}
-
-.note:nth-child(2n) {
-  background: #FAAACA;
-}
-
-.note:nth-child(3n) {
-  background: #69F098;
-}
-
 .hidden {
   display: none;
-}
-
-
-
-.button {
-  font: bold 16px Helvetica, Arial, sans-serif;
-  color: #FFFFFF;
-  padding: 1em 2em;
-  background: linear-gradient(top, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.3));
-  background-color: #00CC00;
-  border-radius: 3px;
-  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3), inset 0 -1px 2px -1px rgba(0, 0, 0, 0.5), inset 0 1px 2px 1px rgba(255, 255, 255, 0.3);
-  text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.3), 0 1px 0 rgba(255, 255, 255, 0.3);
-  text-decoration: none;
-  transition: background .01s, -webkit-transform .150s;
-  transition: transform .150s, background .01s;
-  transition: transform .150s, background .01s, -webkit-transform .150s;
-}
-.button:hover {
-  background-color: #00EE00;
-  box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3), inset 0 -1px 2px -1px rgba(0, 0, 0, 0.5), inset 0 1px 2px 1px rgba(255, 255, 255, 0.3);
-}
-.button:active {
-  background: linear-gradient(bottom, rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.3));
-  background-color: #00CC00;
-  text-shadow: 0 1px 0 rgba(0, 0, 0, 0.3), 0 -1px 0 rgba(255, 255, 255, 0.3);
-  box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.3), inset 0 -1px 2px rgba(255, 255, 255, 0.3);
-  outline: none;
-}
-.button.remove {
-  position: absolute;
-  top: 5px;
-  right: 5px;
-  width: 36px;
-  height: 36px;
-  border-radius: 50%;
-  background-color: #E01C12;
-  text-align: center;
-  line-height: 16px;
-  padding: 10px;
-  border-color: #B30000;
-  font-style: 1.6em;
-  font-weight: bolder;
-  font-family: Helvetica, Arial, sans-serif;
-}
-.button.remove:hover {
-  background-color: #EF0005;
 }

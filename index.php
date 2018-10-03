@@ -8,7 +8,7 @@
   </div>
   <div class="col-md-6">
     <div class="container" id="homePageContainer">
-      <h1>All Notes</h1>
+      <h1>myNotes</h1>
       <p><strong>Keep your thoughts near you.</strong></p>
       <hr>
       <div id="error">

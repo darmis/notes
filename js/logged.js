@@ -1,10 +1,12 @@
 var h = $(document).height();
-h=h-70;
+h=h-54;
 
-function newNote(noteid, noteContent, startx, starty){
+function newNote(noteid, noteContent, startx, starty, startW, startH){
   var nTempl = '<div class="note hidden" data-noteid="'+noteid+'" style="top: '+starty+'px; left: '+startx+'px;">' +
-        '<a href="javascript:;" class="button remove">X</a>' +
-        '<textarea class="textnote" class="form-control">'+noteContent+'</textarea>' +
+        '<div class="heading">' + 
+        '<a href="javascript:;" class="remove"><img src="./img/trash.png"></a>' +
+        '</div>' + 
+        '<textarea class="textnote" class="form-control" style="width: '+startW+'px; height: '+startH+'px;">'+noteContent+'</textarea>' +
         '</div>';
   $('#notesArea').append(nTempl);
   $.ajax({
@@ -34,7 +36,7 @@ function updateID() {
 $("#notesArea").height(h);
 
 $('#add_new').on('click', function() {
-	newNote(0, "", 70, 70);
+	newNote(0, "", 70, 70, 100, 100);
 	updateID();
     
 	$('.note').removeClass("hidden").draggable({
